@@ -1,6 +1,6 @@
 import 'dart:io';
 void main(){
-  game_boards();
+
 }
 
 
@@ -58,10 +58,10 @@ void multiple_words(){
 //Task 5
 
 void game_boards(){
-  int board_size =4;
+  int board_size =3;
     for (int i = 0; i < board_size; i++) {
-     print(' --- --- --- ');
-      print('|   |   |   |');
+     print(' --- '*board_size);
+      print('|   '*(board_size+1));
     }
-  print(' --- --- --- ');
+  print(' ---  '*board_size);
 }
