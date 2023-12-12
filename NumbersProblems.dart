@@ -1,92 +1,67 @@
 import 'dart:io';
-import 'dart:math';
-void main (){
+void main(){
 
-  random_guess();
 }
 
-//Task 1
-int factor(){
 
-  print("Enter a number:");
-  // Reading name of the Geek
-  int? factor= int.parse(stdin.readLineSync()!);
-    int result=1;
-    for (int i=factor;i >=1; i--){
-      result*=i;
-    }
-    return result;
-}
-Task 2
-void check_prime() {
-  print("Enter a number:");
-  int? number = int.parse(stdin.readLineSync()!);
-  if (number.isEven) {
-    if (number == 2) {
-      print('$number is prime.');
-    } else {
-      print('not prime');
-    }
-  } else{
-    for(int i=0; i<=number; i++){
-      // int z =
+
+//Task 2
+void vowels(){
+  print("Enter a String: ");
+  String? str = stdin.readLineSync();
+  int counter =0;
+  if (str?.isEmpty==true){
+    print('error, enter ur sting');
+  } else {
+    for(int i=0; i<str!.length; i++) {
+      var char = str[i];
+      if (char.toLowerCase()=='a' || char.toLowerCase()=='e'  || char.toLowerCase()=='i'  || char.toLowerCase()=='o'  || char.toLowerCase()=='u') {
+        counter++;
+      }
     }
 
+
   }
-}
+  print(counter);
 
-
-
-
-//Task 3
-void check_number_even_odd(){
-  print("Enter a number:");
-  int? number= int.parse(stdin.readLineSync()!);
-  if(number.isEven || number %2==0){
-    print('Number is even');
-  }else{
-    print("number is odd");
-  }
 
 }
 
-//Task 4
-void random_guess(){
-  print("Enter your favourite number:");
-  int? num= int.parse(stdin.readLineSync()!);
-  Random random = new Random(); // import dart.math to get random function
-  int? guess=random.nextInt(101); // guess from 0 to 100
-  print(guess);
-  if(num < guess){
-    print("$num is lower than $guess");
-  } else if(num> guess){
-    print("$num is higher than $guess");
-  } else{
-    print("$num is exactly right to  $guess");
-  }
+// Task3
+
+void remained_age(){
+  print("Enter ur name: ");
+  String? name = stdin.readLineSync();
+  print("Enter ur age:");
+  int? age= int.parse(stdin.readLineSync()!);
+  int remained_age =100-age;
+  print('welcome $name, ur remained age is $remained_age');
 
 }
+//Task4
+void multiple_words(){
+  print("Enter a String: ");
+  String? str = stdin.readLineSync();
+  var output=str?.split(' ');
+  var str_final='';
+  // for (var x in output!){
+  //     s
+  // }
+  for (int i=(output!.length)-1; i>=0;i--){
 
+    stdout.write('${output[i]} ');
 
+  }
+  print(str_final);
+
+}
 //Task 5
 
-void check_Largest(){
-  print("Enter your favourite number:");
-
-  int? num1= int.parse(stdin.readLineSync()!);
-  int? num2= int.parse(stdin.readLineSync()!);
-  int? num3= int.parse(stdin.readLineSync()!);
-  if(num1 >num2){
-    if (num1>num3){
-      print('$num1 is largest');
-    } else{
-      print('$num3 is largest');
+void game_boards(){
+  int board_size =3;
+    for (int i = 0; i < board_size; i++) {
+     print(' --- '*board_size);
+      print('|   '*(board_size+1));
     }
-  }else if(num2>num1){
-    if(num2> num3){
-      print('$num2 is largest');
-    }else{
-      print('$num3 is largest');
-    }
-  }
+  print(' ---  '*board_size);
 }
